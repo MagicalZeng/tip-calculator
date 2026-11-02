@@ -1,0 +1,9 @@
+Live website / 在线网页:
+https://magicalzeng.github.io/tip-calculator/
+
+GitHub repository / 源码仓库:
+https://github.com/MagicalZeng/tip-calculator
+
+Offline / 离线打开:
+Extract the entire ZIP, then open cursor-activities/tip-calculator/index.html.
+先解压整个压缩包，再打开 cursor-activities/tip-calculator/index.html。
