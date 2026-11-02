@@ -1,0 +1,9 @@
+# Keep the personal coursework reflection local.
+reflection.md
+node_modules/
+.DS_Store
+Thumbs.db
+*.log
+.env
+.env.*
+output/
