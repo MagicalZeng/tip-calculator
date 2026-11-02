@@ -77,55 +77,6 @@ h1,h2,p,dl,dd {
   padding:0 36px
 }
 
-.site-header {
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:30px 0 25px;
-  border-bottom:1px solid #dfe3d7
-}
-
-.brand {
-  display:flex;
-  align-items:center;
-  gap:11px;
-  text-decoration:none;
-  color:var(--ink);
-  font-size:29px;
-  font-weight:750;
-  letter-spacing:-1.4px
-}
-
-.brand-icon {
-  display:grid;
-  place-items:center;
-  width:38px;
-  height:38px;
-  border-radius:12px;
-  background:var(--lime);
-  transform:rotate(-5deg)
-}
-
-.brand-icon svg {
-  width:27px;
-  height:27px;
-  stroke-width:2
-}
-
-.brand-icon circle {
-  fill:var(--lime)
-}
-
-.brand-dot {
-  color:#8c9b55
-}
-
-.preferences {
-  display:flex;
-  align-items:center;
-  gap:12px
-}
-
 .select-wrap {
   position:relative;
   display:flex;
@@ -173,9 +124,17 @@ h1,h2,p,dl,dd {
 .intro {
   display:flex;
   justify-content:space-between;
-  align-items:flex-end;
-  padding:42px 0 34px;
+  align-items:flex-start;
+  padding:36px 0 28px;
   gap:32px
+}
+
+.intro-copy {
+  min-width:0
+}
+
+.intro .language-select {
+  flex-shrink:0
 }
 
 .eyebrow {
@@ -208,21 +167,12 @@ h1 em {
   color:#7b8d51
 }
 
-.title-spark {
-  display:inline-block;
-  font-size:42px;
-  font-weight:400;
-  color:#a3b16c;
-  vertical-align:5%;
-  margin-left:16px
-}
-
 .intro-description {
   font-size:13px;
   line-height:1.9;
   color:#6c7767;
-  max-width:250px;
-  margin-bottom:8px;
+  max-width:490px;
+  margin-top:16px;
   letter-spacing:.1px
 }
 
@@ -356,6 +306,40 @@ h2 {
   font-size:10px;
   letter-spacing:1px;
   color:#7a846e
+}
+
+.currency-setting {
+  display:grid;
+  grid-template-columns:1fr minmax(150px,1fr);
+  align-items:center;
+  gap:8px 16px;
+  margin-top:12px;
+  padding:12px 14px;
+  background:#f0f4e6;
+  border:1px solid #e1e8d3;
+  border-radius:10px
+}
+
+.currency-setting>label {
+  font-size:13px;
+  font-weight:600
+}
+
+.currency-setting .currency-select select {
+  width:100%;
+  min-height:44px;
+  padding:0 34px 0 14px;
+  background:#fff;
+  border-color:#c5d2b2;
+  font-size:14px;
+  font-weight:600
+}
+
+.currency-setting p {
+  grid-column:1 / -1;
+  font-size:10px;
+  line-height:1.6;
+  color:#667355
 }
 
 .money-input input:focus-visible,.custom-input input:focus-visible,.stepper input:focus-visible {
@@ -802,7 +786,7 @@ h2 {
 
 .below-calculator {
   display:flex;
-  justify-content:space-between;
+  justify-content:center;
   gap:12px;
   color:#7d8573;
   font-size:10px;
@@ -830,11 +814,6 @@ h2 {
   margin-top:29px;
   font-size:10px;
   color:#8b927e
-}
-
-.footer-mark {
-  font-size:8px;
-  letter-spacing:1.2px
 }
 
 .sr-only {
@@ -936,21 +915,17 @@ html[lang="en"] h1 em {
 }
 
 html[lang="en"] .intro-description {
-  max-width:235px
+  max-width:490px
 }
 
 html[lang="ja"] h1 {
   font-size:40px
 }
 
-html[lang="ja"] .title-spark {
-  font-size:34px
-}
-
 @media(min-width:1300px) {
   .intro {
-    padding-top:48px;
-    padding-bottom:39px
+    padding-top:40px;
+    padding-bottom:30px
   }
 }
 
@@ -965,7 +940,6 @@ html[lang="ja"] .title-spark {
     padding:25px 23px 20px
   }
   .intro-description {
-    max-width:220px;
     font-size:12px
   }
   h1 {
@@ -989,9 +963,6 @@ html[lang="ja"] .title-spark {
   .custom-option {
     font-size:10px
   }
-  .footer-mark {
-    display:none
-  }
   .intro {
     gap:20px
   }
@@ -1001,25 +972,6 @@ html[lang="ja"] .title-spark {
   .page-shell {
     max-width:540px;
     padding:0 20px
-  }
-  .site-header {
-    padding:21px 0 19px
-  }
-  .brand {
-    font-size:25px;
-    gap:7px
-  }
-  .brand-icon {
-    width:31px;
-    height:31px;
-    border-radius:9px
-  }
-  .brand-icon svg {
-    width:24px;
-    height:24px
-  }
-  .preferences {
-    gap:7px
   }
   .select-wrap select {
     font-size:10px;
@@ -1042,8 +994,13 @@ html[lang="ja"] .title-spark {
     height:13px
   }
   .intro {
-    display:block;
-    padding:30px 0 25px
+    flex-direction:column;
+    gap:18px;
+    padding:20px 0 25px
+  }
+  .intro .language-select {
+    order:-1;
+    align-self:flex-end
   }
   .eyebrow {
     font-size:9px;
@@ -1053,10 +1010,6 @@ html[lang="ja"] .title-spark {
     font-size:38px;
     line-height:1.2;
     letter-spacing:-1px
-  }
-  .title-spark {
-    font-size:33px;
-    margin-left:12px
   }
   .intro-description {
     max-width:310px;
@@ -1144,17 +1097,6 @@ html[lang="ja"] .title-spark {
   .page-shell {
     padding:0 13px
   }
-  .brand {
-    font-size:22px;
-    gap:5px
-  }
-  .brand-icon {
-    width:28px;
-    height:28px
-  }
-  .preferences {
-    gap:5px
-  }
   .language-select select {
     min-width:98px;
     padding-left:25px
@@ -1162,8 +1104,10 @@ html[lang="ja"] .title-spark {
   .select-wrap select {
     font-size:9px
   }
-  .currency-select select {
-    padding-left:7px
+  .currency-setting {
+    grid-template-columns:1fr minmax(130px,1.3fr);
+    gap:8px;
+    padding:10px
   }
   .input-panel {
     padding-left:13px;
